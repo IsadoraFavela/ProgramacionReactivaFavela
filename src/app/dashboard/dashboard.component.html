@@ -1,6 +1,7 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="isDrawerOpen">
-    <p>Auto-resizing sidenav</p>
+    <p>{{ (authUser$ | async)?.email }}</p>
+    <p></p>
     <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
     <button (click)="showFiller = !showFiller" mat-raised-button>
       Toggle extra text
@@ -9,8 +10,12 @@
 
   
     <main>
+      
       <app-toolbar></app-toolbar>
-      <app-tablas></app-tablas>
+      <p>{{(authUser$ | async)?.email}}</p> 
+      <p>{{(authUser$ | async)?.nombre}}</p> 
+      <app-observables></app-observables>
+      <!--<app-tablas></app-tablas> -->
     </main>
     
   
